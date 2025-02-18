@@ -5,22 +5,48 @@ from helpers import screen
 
 
 class Post:
-    """
-    A class used to represent post on Nitzagram
-    """
-    def __init__(self): #TODO: add parameters
-        #TODO: write me!
-        pass
+    
+    def __init__(self, username, location, description, like_counter, comments):
+        self.username = username
+        self.location = location
+        self.description = description
+        self.like_counter = like_counter
+        self.comments = comments
 
-    def display(self):
-        """
-        Display the Post image/Text, description, location, likes and comments
-        on screen
+    def add_like(like_counter):
+        like_counter += 1
 
-        :return: None
-        """
-        # TODO: write me!
-        pass
+    def add_comments(comments):
+        comments = input("Enter your comments: ")
+        
+
+    def display(username, location, description, like_counter, comments):
+        global screen
+        screen_size = (WINDOW_WIDTH, WINDOW_HEIGHT)
+        screen = pygame.display.set_mode(screen_size)
+
+        font = pygame.font.SysFont(username, UI_FONT_SIZE)
+        text = font.render(username, True, BLACK)
+        screen.blit(text, [USER_NAME_X_POS, USER_NAME_Y_POS])
+
+        font = pygame.font.SysFont(location, UI_FONT_SIZE)
+        text = font.render(location, True, BLACK)
+        screen.blit(text, [LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS])
+
+        font = pygame.font.SysFont(like_counter, UI_FONT_SIZE)
+        text = font.render(username, True, BLACK)
+        screen.blit(text, [LIKE_TEXT_X_POS, LIKE_BUTTON_Y_POS])
+
+        font = pygame.font.SysFont(description, UI_FONT_SIZE)
+        text = font.render(username, True, BLACK)
+        screen.blit(text, [DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS])
+
+        font = pygame.font.SysFont(comments, UI_FONT_SIZE)
+        text = font.render(comments, True, BLACK)
+        screen.blit(text, [DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS])
+
+        pygame.display.flip()
+        
 
 
     def display_comments(self):
@@ -50,4 +76,15 @@ class Post:
                 break
 
 
+class ImagePost(Post):
+    def __init__(self, username, location, description, like_counter, comments, image):
+        super().__init__(username, location, description, like_counter, comments)
+        self.image = image
 
+    def display(image):
+        super().display
+
+        img = pygame.image.load(image)
+        img = pygame.transform.scale(img, (POST_WIDTH, POST_HEIGHT))
+        screen.blit(img, (POST_X_POS, POST_Y_POS))
+        pygame.display.flip()
