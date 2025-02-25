@@ -1,5 +1,5 @@
 import pygame
-from helpers import screen
+from classes.helpers import screen
 from classes.constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
 
 
