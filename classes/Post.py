@@ -1,6 +1,6 @@
 import pygame
 
-from constants import *
+from classes.constants import *
 from helpers import screen
 
 
