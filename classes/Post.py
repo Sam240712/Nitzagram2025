@@ -104,4 +104,11 @@ class TextPost(Post):
         screen.blit(text, [LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS])
         pygame.display.flip()
 
-    
+class Comment():
+    def __init__(self, comment, respond_counter):
+        self.comment = comment
+        self.respond_counter = respond_counter
+
+    def display_comments():
+        pass
+
