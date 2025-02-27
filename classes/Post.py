@@ -88,3 +88,27 @@ class ImagePost(Post):
         img = pygame.transform.scale(img, (POST_WIDTH, POST_HEIGHT))
         screen.blit(img, (POST_X_POS, POST_Y_POS))
         pygame.display.flip()
+
+class TextPost(Post):
+    def __init__(self, username, location, description, like_counter, comments, text, text_color, background_color):
+        super().__init__(username, location, description, like_counter, comments)
+        self.text = text
+        self.text_color = text_color
+        self.background_color = background_color
+
+    def display(text, text_color, background_color):
+        super().display
+
+        font = pygame.font.SysFont(text, TEXT_POST_FONT_SIZE)
+        text = font.render(text, True, text_color)
+        screen.blit(text, [LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS])
+        pygame.display.flip()
+
+class Comment():
+    def __init__(self, comment, respond_counter):
+        self.comment = comment
+        self.respond_counter = respond_counter
+
+    def display_comments():
+        pass
+
